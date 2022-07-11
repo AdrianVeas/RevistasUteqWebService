@@ -3,7 +3,17 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Users/ASUS/Desktop/Universidad/8vo Semestre/POOM/UteqWebService/app/src/main/res/layout/activity_main.xml" value="0.1" />
+        <entry key="..\:/Users/ASUS/AppData/Local/Android/Sdk/platforms/android-32/data/res/layout/simple_spinner_item.xml" value="0.209375" />
+        <entry key="..\:/Users/ASUS/Desktop/Universidad/8vo Semestre/POOM/UteqWebService/app/src/main/res/drawable/lyt_bordesredondos.xml" value="0.145" />
+        <entry key="..\:/Users/ASUS/Desktop/Universidad/8vo Semestre/POOM/UteqWebService/app/src/main/res/layout/activity_articulos.xml" value="0.1953125" />
+        <entry key="..\:/Users/ASUS/Desktop/Universidad/8vo Semestre/POOM/UteqWebService/app/src/main/res/layout/activity_ediciones.xml" value="0.209375" />
+        <entry key="..\:/Users/ASUS/Desktop/Universidad/8vo Semestre/POOM/UteqWebService/app/src/main/res/layout/activity_main.xml" value="0.25" />
+        <entry key="..\:/Users/ASUS/Desktop/Universidad/8vo Semestre/POOM/UteqWebService/app/src/main/res/layout/activity_revistas.xml" value="0.209375" />
+        <entry key="..\:/Users/ASUS/Desktop/Universidad/8vo Semestre/POOM/UteqWebService/app/src/main/res/layout/crdvwarticulos.xml" value="0.25" />
+        <entry key="..\:/Users/ASUS/Desktop/Universidad/8vo Semestre/POOM/UteqWebService/app/src/main/res/layout/crdvwediciones.xml" value="0.1" />
+        <entry key="..\:/Users/ASUS/Desktop/Universidad/8vo Semestre/POOM/UteqWebService/app/src/main/res/layout/crdvwrevistas.xml" value="0.1" />
+        <entry key="..\:/Users/ASUS/Desktop/Universidad/8vo Semestre/POOM/UteqWebService/app/src/main/res/layout/spinner_team.xml" value="0.209375" />
+        <entry key="..\:/Users/ASUS/Desktop/Universidad/8vo Semestre/POOM/UteqWebService/app/src/main/res/layout/style.xml" value="0.209375" />
       </map>
     </option>
   </component>

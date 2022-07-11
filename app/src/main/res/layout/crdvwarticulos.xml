@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        app:cardBackgroundColor="@color/color1"
+        app:cardCornerRadius="10dp"
+        app:cardElevation="5dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="8dp">
+
+            <TextView
+                android:id="@+id/txtNombreArticulo"
+                style="@style/TextAppearance.AppCompat.Title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:textColor="@color/colorPrimary"
+                android:text="REVISTA" />
+            <TextView
+                android:id="@+id/txtDoiArticulo"
+                android:layout_below="@id/txtNombreArticulo"
+                style="@style/TextAppearance.AppCompat.Title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:textSize="12dp"
+                android:textStyle="normal"
+                android:textColor="@color/colorPrimary"
+                android:text="REVISTA" />
+            <TextView
+                android:id="@+id/txtFechaArticulo"
+                android:layout_below="@id/txtDoiArticulo"
+                style="@style/TextAppearance.AppCompat.Title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:textAlignment="textEnd"
+                android:textSize="8dp"
+                android:textStyle="normal"
+                android:textColor="#00da00"
+                android:text="REVISTA" />
+        </RelativeLayout>
+    </androidx.cardview.widget.CardView>
+</LinearLayout>
