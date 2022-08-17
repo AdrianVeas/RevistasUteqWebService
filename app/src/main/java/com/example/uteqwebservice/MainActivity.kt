@@ -2,19 +2,11 @@ package com.example.uteqwebservice
 
 import android.content.Intent
 import android.os.Bundle
-import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
-import android.view.View;
-import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
-import android.widget.Spinner;
-import android.widget.TextView;
-import android.widget.Toast;
-import androidx.core.view.get
-
-import org.json.JSONArray;
-import org.json.JSONException;
-import java.util.ArrayList;
+import android.view.View
+import android.widget.ArrayAdapter
+import android.widget.Spinner
+import android.widget.Toast
 
 
 class MainActivity : AppCompatActivity(), View.OnClickListener{
@@ -41,28 +33,28 @@ class MainActivity : AppCompatActivity(), View.OnClickListener{
         val bundle = Bundle()
         when (text) {
             "ESPAÑOL" -> {
-                Toast.makeText(applicationContext, "BIENVENIDO", Toast.LENGTH_SHORT).show();
+                Toast.makeText(applicationContext, "BIENVENIDO", Toast.LENGTH_SHORT).show()
                 idioma = "es_ES"
                 bundle.putString("idioma", idioma)
                 intent.putExtras(bundle)
                 startActivity(intent)
             }
             "ENGLISH" -> {
-                Toast.makeText(applicationContext, "WELCOME", Toast.LENGTH_SHORT).show();
+                Toast.makeText(applicationContext, "WELCOME", Toast.LENGTH_SHORT).show()
                 idioma = "en_US"
                 bundle.putString("idioma", idioma)
                 intent.putExtras(bundle)
                 startActivity(intent)
             }
             "PORTUGUêS" -> {
-                Toast.makeText(applicationContext, "BEM VINDO", Toast.LENGTH_SHORT).show();
+                Toast.makeText(applicationContext, "BEM VINDO", Toast.LENGTH_SHORT).show()
                 idioma = "pt_BR"
                 bundle.putString("idioma", idioma)
                 intent.putExtras(bundle)
                 startActivity(intent)
             }
             else -> {
-                Toast.makeText(applicationContext, "Error", Toast.LENGTH_SHORT).show();
+                Toast.makeText(applicationContext, "Error", Toast.LENGTH_SHORT).show()
             }
         }
     }
