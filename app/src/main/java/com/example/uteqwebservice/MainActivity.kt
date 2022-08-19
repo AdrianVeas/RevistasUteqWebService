@@ -1,5 +1,6 @@
 package com.example.uteqwebservice
 
+import android.Manifest
 import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
@@ -11,6 +12,8 @@ import android.widget.Toast
 
 class MainActivity : AppCompatActivity(), View.OnClickListener{
 
+    lateinit var adminPermisos: Permissions
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -21,6 +24,20 @@ class MainActivity : AppCompatActivity(), View.OnClickListener{
 
         spineridiomas.adapter = adaptadoridiomas
 
+
+        adminPermisos = Permissions(this)
+
+        val permisosSolicitados = ArrayList<String?>()
+        permisosSolicitados.add(Manifest.permission.CAMERA)
+        permisosSolicitados.add(Manifest.permission.WRITE_EXTERNAL_STORAGE)
+        permisosSolicitados.add(Manifest.permission.READ_EXTERNAL_STORAGE)
+        permisosSolicitados.add(Manifest.permission.WRITE_CALENDAR)
+
+
+        val permisosAprobados:ArrayList<String?>   = adminPermisos.getPermisosAprobados(permisosSolicitados)
+        val listPermisosNOAprob:ArrayList<String?> = adminPermisos.getPermisosNoAprobados(permisosSolicitados)
+
+        adminPermisos.getPermission(listPermisosNOAprob)
 
 
     }

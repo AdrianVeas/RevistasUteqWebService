@@ -67,10 +67,12 @@ class RevistasActivity : AppCompatActivity() , View.OnClickListener{
                         recyclerView.adapter = adapter
                     }catch (e: Exception){
                         txt.text = e.message
+                        Toast.makeText(applicationContext, "Error: "+e.message , LENGTH_SHORT).show()
                     }
 
                 },
-                { error ->  txt.text = error.message})
+                { error ->  txt.text = error.message
+                    Toast.makeText(applicationContext, "Error 2: "+error.message , LENGTH_SHORT).show()})
 
 
             queue.add(stringRequest)
@@ -78,7 +80,7 @@ class RevistasActivity : AppCompatActivity() , View.OnClickListener{
 
         }
         catch (e :Exception ){
-            Toast.makeText(applicationContext, "Error: "+e.message , LENGTH_SHORT).show();
+            Toast.makeText(applicationContext, "Error: "+e.message , LENGTH_SHORT).show()
         }
     }
 
