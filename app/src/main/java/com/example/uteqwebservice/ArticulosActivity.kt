@@ -2,6 +2,7 @@ package com.example.uteqwebservice
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
 import android.view.animation.AnimationUtils
 import android.widget.TextView
 import android.widget.Toast
@@ -77,7 +78,10 @@ class ArticulosActivity : AppCompatActivity() {
 
         }
         catch (e :Exception ){
-            Toast.makeText(applicationContext, "Error: "+e.message , Toast.LENGTH_SHORT).show();
+            Toast.makeText(applicationContext, "Error: "+e.message , Toast.LENGTH_SHORT).show()
         }
+    }
+    fun downloadpdf(v: View?) {
+        Toast.makeText(applicationContext, "YEAH", Toast.LENGTH_SHORT).show()
     }
 }
