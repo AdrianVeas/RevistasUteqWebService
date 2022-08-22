@@ -1,22 +1,22 @@
 package com.example.uteqwebservice
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.view.animation.AnimationUtils
 import android.widget.TextView
 import android.widget.Toast
 import android.widget.Toast.LENGTH_SHORT
+import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.android.volley.Request
 import com.android.volley.toolbox.StringRequest
-import com.android.volley.toolbox.Volley
 import com.example.uteqwebservice.adaptadores.RevistasAdaptador
+import com.example.uteqwebservice.extras.HttpsTrustManager
+import com.example.uteqwebservice.extras.MySingleton
 import com.example.uteqwebservice.modelos.RevistasModelo
 import com.example.uteqwebservice.modelos.RevistasModelo.Companion.JsonObjectsBuild
 import org.json.JSONArray
-import java.util.ArrayList
 
 class RevistasActivity : AppCompatActivity() , View.OnClickListener{
     private var layoutManager: RecyclerView.LayoutManager? = null
@@ -46,12 +46,11 @@ class RevistasActivity : AppCompatActivity() , View.OnClickListener{
                 }
             }
 
-            val queue = Volley.newRequestQueue(this)
-            val stringRequest = StringRequest(
-                Request.Method.GET, "https://revistas.uteq.edu.ec/ws/journals.php?locale="+idioma,
+            HttpsTrustManager.allowAllSSL()
+            val request = StringRequest(
+                Request.Method.GET, "https://revistas.uteq.edu.ec/ws/journals.php?locale=$idioma",
                 { response ->
 
-                    try {
                         val JSONlista = JSONArray(response)
                         val lstUsuarios: ArrayList<RevistasModelo> = JsonObjectsBuild(JSONlista)
 
@@ -65,17 +64,13 @@ class RevistasActivity : AppCompatActivity() , View.OnClickListener{
                         adapter = RevistasAdaptador(lstUsuarios, idioma)
 
                         recyclerView.adapter = adapter
-                    }catch (e: Exception){
-                        txt.text = e.message
-                        Toast.makeText(applicationContext, "Error: "+e.message , LENGTH_SHORT).show()
-                    }
 
                 },
                 { error ->  txt.text = error.message
                     Toast.makeText(applicationContext, "Error 2: "+error.message , LENGTH_SHORT).show()})
 
 
-            queue.add(stringRequest)
+            MySingleton.getInstance(applicationContext).addToRequestQueue(request)
 
 
         }
@@ -84,7 +79,9 @@ class RevistasActivity : AppCompatActivity() , View.OnClickListener{
         }
     }
 
+
     override fun onClick(v: View?) {
         TODO("Not yet implemented")
     }
+
 }

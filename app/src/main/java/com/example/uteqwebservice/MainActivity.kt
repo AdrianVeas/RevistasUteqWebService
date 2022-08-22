@@ -8,6 +8,7 @@ import android.view.View
 import android.widget.ArrayAdapter
 import android.widget.Spinner
 import android.widget.Toast
+import com.example.uteqwebservice.extras.Permissions
 
 
 class MainActivity : AppCompatActivity(), View.OnClickListener{

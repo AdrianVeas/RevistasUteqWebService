@@ -1,4 +1,4 @@
-package com.example.uteqwebservice
+package com.example.uteqwebservice.extras
 
 import android.app.Activity
 import android.content.Context

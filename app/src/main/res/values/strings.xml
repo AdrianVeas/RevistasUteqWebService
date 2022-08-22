@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">" "</string>
+    <string name="app_name">"Revistas"</string>
     <string name="revistas_uteq_edu_ec">revistas.uteq.edu.ec</string>
     <string name="btnContinuar">INGRESAR</string>
     <string name="bienvenido_a_nuestro_portal_m_vil_de_revistas_cient_ficas">Bienvenido a nuestro portal móvil de revistas científicas</string>
