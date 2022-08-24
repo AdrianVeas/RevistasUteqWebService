@@ -13,18 +13,19 @@
         android:layout_margin="10dp"
         android:layout_height="24dp"
         style="@style/TextAppearance.AppCompat.Title"
-        android:text="ARTÍCULOS DE LAS REVISTAS UTEQ"
-        android:textSize="20dp"
+        android:text="@string/art_culos_de_las_revistas_uteq"
+        android:textSize="20sp"
         android:textStyle="bold"
         android:textColor="@color/colorPrimary"
         >
 
     </TextView>
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/articulosrecycler"
-        android:layout_below="@id/texttituloarticulos"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_below="@id/texttituloarticulos"
         android:layout_marginLeft="5dp"
         android:layout_marginTop="5dp"
         android:layout_marginRight="5dp"

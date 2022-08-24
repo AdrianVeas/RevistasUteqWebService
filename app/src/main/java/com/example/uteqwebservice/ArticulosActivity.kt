@@ -20,14 +20,16 @@ import java.util.ArrayList
 class ArticulosActivity : AppCompatActivity() {
     private var layoutManager: RecyclerView.LayoutManager? = null
     private var adapter: RecyclerView.Adapter<ArticulosAdaptador.ViewHolder>? = null
+    private lateinit var id : String
+    private lateinit var idioma : String
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_articulos)
         try {
             val bundle = intent.extras
-            val idioma = bundle?.getString("idioma")
+            idioma = bundle?.getString("idioma").toString()
 
-            val id = bundle?.getString("id")
+            id = bundle?.getString("id").toString()
 
             val txt = findViewById<TextView>(R.id.texttituloarticulos)
             layoutManager = LinearLayoutManager(this, RecyclerView.VERTICAL, false)
@@ -78,10 +80,11 @@ class ArticulosActivity : AppCompatActivity() {
 
         }
         catch (e :Exception ){
-            Toast.makeText(applicationContext, "Error: "+e.message , Toast.LENGTH_SHORT).show()
+            Toast.makeText(applicationContext, "Error: "+e.message , Toast.LENGTH_LONG).show()
         }
     }
-    fun downloadpdf(v: View?) {
-        Toast.makeText(applicationContext, "YEAH", Toast.LENGTH_SHORT).show()
+    fun viewpdf(v: View?) {
+        Toast.makeText(applicationContext, "YEAH", Toast.LENGTH_LONG).show()
     }
+
 }

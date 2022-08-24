@@ -13,8 +13,8 @@
         android:layout_height="24dp"
         android:layout_margin="10dp"
         style="@style/TextAppearance.AppCompat.Title"
-        android:text="REVISTAS DE LA UTEQ"
-        android:textSize="20dp"
+        android:text="@string/revistas_de_la_uteq"
+        android:textSize="20sp"
         android:textStyle="bold"
         android:textColor="@color/colorPrimary"
         >

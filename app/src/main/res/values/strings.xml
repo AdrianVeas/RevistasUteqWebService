@@ -6,5 +6,14 @@
     <string name="seleccione_un_idioma_a_mostrar">Seleccione un idioma a mostrar</string>
     <string name="todo">TODO</string>
     <string name="lenguaje_language_l_ngua">LENGUAJE/LANGUAGE/LÍNGUA</string>
-    <string name="download_pdf">DOWNLOAD PDF</string>
+    <string name="view_pdf">VIEW PDF</string>
+    <string name="titulo">TITULO</string>
+    <string name="doi">DOI</string>
+    <string name="fecha">FECHA</string>
+    <string name="art_culos_de_las_revistas_uteq">ARTÍCULOS DE LAS REVISTAS UTEQ</string>
+    <string name="ediciones_de_las_revistas_uteq">EDICIONES DE LAS REVISTAS UTEQ</string>
+    <string name="revistas_de_la_uteq">REVISTAS DE LA UTEQ</string>
+    <string name="next">NEXT</string>
+    <string name="scientific_magazines">SCIENTIFIC MAGAZINES</string>
+    <string name="bienvenido_welcome_bem_vindo">BIENVENIDO/WELCOME/BEM VINDO</string>
 </resources>
