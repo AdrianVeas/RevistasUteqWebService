@@ -11,13 +11,13 @@ class EdicionesModelo (a: JSONObject) {
     companion object {
         @Throws(JSONException::class)
         fun JsonObjectsBuild(datos: JSONArray): java.util.ArrayList<EdicionesModelo> {
-            val usuarios: ArrayList<EdicionesModelo> = ArrayList()
+            val ediciones: ArrayList<EdicionesModelo> = ArrayList()
             var i = 0
             while (i < datos.length()) {
-                usuarios.add(EdicionesModelo(datos.getJSONObject(i)))
+                ediciones.add(EdicionesModelo(datos.getJSONObject(i)))
                 i++
             }
-            return usuarios
+            return ediciones
         }
     }
 

@@ -12,11 +12,15 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.uteqwebservice.R
 import com.example.uteqwebservice.ViewPDFActivity
 import com.example.uteqwebservice.modelos.ArticuloModelo
+import com.example.uteqwebservice.modelos.GaleysModelo
 import com.google.android.material.snackbar.Snackbar
+import org.json.JSONArray
 
 class ArticulosAdaptador (val ArticulosList: ArrayList<ArticuloModelo>, var idioma: String?) : RecyclerView.Adapter<ArticulosAdaptador.ViewHolder>() {
     var id_articulos : String? = ""
-    var btnviewpdf : Button?
+    lateinit var lstgaleyArray: JSONArray
+    private var urlpdf: String? = ""
+    //private var btnviewpdf : Button
 
     override fun onCreateViewHolder(viewGroup: ViewGroup, viewType: Int): ViewHolder {
         val v = LayoutInflater.from(viewGroup.context)
@@ -28,6 +32,7 @@ class ArticulosAdaptador (val ArticulosList: ArrayList<ArticuloModelo>, var idio
         holder.txtNombre.text = ArticulosList[position].titulo
         holder.txtdoi.text = ArticulosList[position].doi
         holder.txtfecha.text = ArticulosList[position].fecha
+        lstgaleyArray = ArticulosList[position].galeys!!
 
         id_articulos = ArticulosList[position].id_ediciones
     }
@@ -48,26 +53,21 @@ class ArticulosAdaptador (val ArticulosList: ArrayList<ArticuloModelo>, var idio
             txtNombre = itemView.findViewById(R.id.txtNombreArticulo)
             txtdoi = itemView.findViewById(R.id.txtDoiArticulo)
             txtfecha = itemView.findViewById(R.id.txtFechaArticulo)
-            btnviewpdf = itemView.findViewById(R.id.btnViewPdf)
+            //btnviewpdf = itemView.findViewById(R.id.btnViewPdf)
 
-            btnviewpdf.setOnClickListener { v:View->
-                val position: Int = adapterPosition
-                id_articulos = ArticulosList[position].id_ediciones
-                Snackbar.make(
-                    v, "Item Selecccionado $id_articulos",
-                    Snackbar.LENGTH_LONG
-                ).setAction("Actción", null).show()
 
-                val intent = Intent(v.context, ViewPDFActivity::class.java)
-                val bundle = Bundle()
-                bundle.putString("idioma", idioma)
-                bundle.putString("id", id_articulos)
-                intent.putExtras(bundle)
-                ContextCompat.startActivity(v.context, intent, null)
-            }
             itemView.setOnClickListener { v: View ->
                 val position: Int = adapterPosition
                 id_articulos = ArticulosList[position].id_ediciones
+                lstgaleyArray = ArticulosList[position].galeys!!
+
+                val lstgaley: ArrayList<GaleysModelo> = GaleysModelo.JsonObjectsBuild(lstgaleyArray)
+                for (lst in lstgaley){
+                    if(lst.label == "PDF"){
+                        urlpdf = lst.UrlViewGalley
+                    }
+                }
+
                 Snackbar.make(
                     v, "Item Selecccionado $id_articulos",
                     Snackbar.LENGTH_LONG
@@ -77,6 +77,8 @@ class ArticulosAdaptador (val ArticulosList: ArrayList<ArticuloModelo>, var idio
                 val bundle = Bundle()
                 bundle.putString("idioma", idioma)
                 bundle.putString("id", id_articulos)
+                bundle.putString("title", txtNombre.text.toString())
+                bundle.putString("url", urlpdf)
                 intent.putExtras(bundle)
                 ContextCompat.startActivity(v.context, intent, null)
             }

@@ -7,17 +7,18 @@ class ArticuloModelo (a: JSONObject) {
     var titulo: String? = null
     var doi: String ? = null
     var fecha: String ? = null
+    var galeys: JSONArray? =null
 
     companion object {
         @Throws(JSONException::class)
         fun JsonObjectsBuild(datos: JSONArray): java.util.ArrayList<ArticuloModelo> {
-            val usuarios: ArrayList<ArticuloModelo> = ArrayList()
+            val articulos: ArrayList<ArticuloModelo> = ArrayList()
             var i = 0
             while (i < datos.length()) {
-                usuarios.add(ArticuloModelo(datos.getJSONObject(i)))
+                articulos.add(ArticuloModelo(datos.getJSONObject(i)))
                 i++
             }
-            return usuarios
+            return articulos
         }
     }
 
@@ -27,5 +28,6 @@ class ArticuloModelo (a: JSONObject) {
         titulo = a.getString("title")
         doi = a.getString("doi")
         fecha = a.getString("date_published")
+        galeys = a.getJSONArray("galeys")
     }
 }
